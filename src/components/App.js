@@ -1,31 +1,24 @@
-import React, {Component} from 'react'
-import Router from './Router'
-import QuizApi from '../api/QuizApi'
+import React, { Component } from 'react'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+
+import Categories from './Categories';
+import Quiz from './Quiz'
 
 class App extends Component {
-  constructor() {
-    super()
-    this.state={
-      data:[]
-    }
-  }
-
-  componentDidMount() {
-    this.getSubmit()
-  }
-
-  async getSubmit() {
-      const response= await QuizApi.get('api/quiz/all')
-      this.setState({
-        data:response.data
-      })
-  }
-
   render() {
-    return(
-      <div className='ui container'>
-        <Router data={this.state.data} />
-      </div>
+    return (
+      <Router>
+        <div className="ui container">
+          <Switch>
+            <Route path="/" exact component={Categories} />
+            <Route path="/quiz/:quizId" component={Quiz} />
+          </Switch>
+        </div>
+      </Router>
     )
   }
 }
