@@ -82,7 +82,7 @@ class Quiz extends Component {
         answerToSend: ansToSend,
         questionId: questionId,
         progress: 100,
-        time: 120000,
+        time: 15000,
         question_map: question_map,
       })
     } else {
@@ -124,7 +124,7 @@ class Quiz extends Component {
     var minutes = Math.floor(millis / 60000);
     var seconds = ((millis % 60000) / 1000).toFixed(0);
     return (
-      <div className='time-bar'>Time Remaining: {minutes + ":" + (seconds < 10 ? '0' : '') + seconds} / 2:00 minutes</div>
+      <div className='time-bar'>Time Remaining: {minutes + ":" + (seconds < 10 ? '0' : '') + seconds} / 0:15 seconds</div>
     )
   }
 

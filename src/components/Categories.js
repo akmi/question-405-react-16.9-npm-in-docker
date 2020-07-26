@@ -44,7 +44,7 @@ class Categories extends Component {
                     <div className='list-group-item'>
                       <div className='list-group-item d-flex justify-content-between align-items-center'>
                         <h3 className={'quiz-list-' + element.id}>{element.name}</h3>
-                        <Link className="btn btn-success" to={`/quiz/${element.id}`}>Start</Link>
+                        <Link className={'btn btn-success start-quiz-' + element.id} to={`/quiz/${element.id}`}>Start</Link>
                       </div>
                       <p> {element.description} </p>
                     </div>
