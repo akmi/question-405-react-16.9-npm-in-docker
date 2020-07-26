@@ -49,7 +49,7 @@ class Quiz extends Component {
 
   tick = () => {
     this.setState({
-      progress: this.state.progress - 0.84,
+      progress: this.state.progress - 100/(this.state.time/1000),
       time: this.state.time - 1000
     })
     if (Math.floor(this.state.progress) === -1) {
